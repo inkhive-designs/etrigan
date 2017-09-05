@@ -1,0 +1,225 @@
+/* ---------- Header ------------- */
+#header-image {
+  position: relative;
+  img {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
+    width: 100%;
+  }
+  .site-branding-container {
+    position: absolute;
+    bottom: 15px;
+    @media screen and (max-width: 600px) {
+      bottom: 4px;
+    }
+    width: 100%;
+  }
+  #text-title-desc {
+    clear: none;
+    float: left;
+    @media screen and (max-width: 991px) {
+      float: none;
+    }
+    @media screen and (max-width: 768px) {
+      float: none;
+    }
+    vertical-align: middle;
+  }
+
+  .site-title {
+    font-size: 55px;
+    -webkit-font-smoothing: antialiased;
+    @media screen and (max-width: 600px) {
+      font-size: 24px;
+    }
+    font-weight: bold;
+    margin-top: 0px;
+    a {
+      color: white;
+    }
+  }
+  .site-description {
+    font-weight: 300;
+    font-size: 15px;
+    @media screen and (max-width: 600px) {
+      font-size: 13px;
+    }
+    margin-top: 10px;
+  }
+}
+
+#top-bar {
+  padding-top: 6px;
+  .container {
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+
+  #searchicon {
+    background: #eee;
+    border: solid 2px #ddd;
+    padding-top: 6px;
+    padding-bottom: 4px;
+  }
+  @media screen and (max-width: 600px) {
+    .td_mobile_menu_wrap {
+      min-height: 42px;
+      padding: 10px;
+      margin-bottom: 0px;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: "\f103";
+        font-family: "FontAwesome";
+        color: darken(@onaccent,8%);
+        position: absolute;
+        right: 17px;
+        top: 13px;
+        font-size: 18px;
+      }
+    }
+    .mobileMenu {
+      padding: 5px 8px;
+      border: none;
+      box-shadow: none;
+      background: darken(@accent,10%);
+      color: darken(@onaccent,8%);
+      background-image: none;
+      -webkit-appearance: none;
+      position: relative;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+#masthead {
+  text-align: left;
+  color: @content;
+  .social-icons {
+    float: left;
+    display: inline-block;
+    padding-top: 20px;
+    @media screen and (max-width: 991px) {
+      float: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .hvr-outline-out:hover:before, .hvr-outline-out:focus:before, .hvr-outline-out:active:before {
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+  }
+  .social-icons a {
+    font-size: 22px;
+    padding: 6px 14px;
+    padding-top: 5px;
+    color: @content;
+    float: none;
+    margin-right: 6px;
+    .transition( ease 0.2s );
+    min-width: 32px;
+    text-align: center;
+    &:before {
+      border: dotted 1px darken(@content, 10%);
+      border-radius: 3px;
+    }
+    @media screen and (max-width: 600px) {
+      float: none;
+    }
+    &:hover {
+      background: darken(@content, 10%);
+      color: white;
+      border-radius: 3px;
+
+    }
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .masthead-container {
+    text-align: center;
+  }
+}
+#top-search {
+  display: inline-block;
+  float: right;
+  @media screen and (max-width: 991px) {
+    float: none;
+  }
+  padding: 15px 25px;
+  padding-right: 0;
+  margin-left: 5px;
+  padding-left: 5px;
+  label {
+    margin-bottom:  0;
+    min-width: 300px;
+    @media screen and (max-width: 768px) {
+      min-width: 150px;
+    }
+  }
+  input[type=search] {
+    background: lighten(@background, 0%);
+    border: dashed 1px lighten(@content, 25%);
+    border-right: none;
+    padding: 10px 10px;
+    outline: none;
+    width: 100%;
+    .placeholder (lighten(@content,10%),false);
+  }
+  button {
+    background: lighten(@content, 5%);
+    box-shadow: none;
+    border: solid 1px lighten(@content, 5%);
+    text-shadow: none;
+    padding: 10px 13px;
+    border-left: none;
+    margin-left: -7px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    outline: none;
+    color: white;
+  }
+}
+
+#top-cart {
+  display: inline-block;
+  float: right;
+  @media screen and (max-width: 991px) {
+    float: none;
+    position: relative;
+    top: 10px;
+  }
+  min-width: 100px;
+  padding-top: 18px;
+  &:hover {
+    i {
+      .transform(translateX(5px));
+    }
+  }
+  i {
+    .transition(0.4s all ease);
+    font-size: 34px;
+    float: right;
+  }
+  .cart-contents {
+    float: right;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  a {
+    color: @onaccent;
+  }
+}
+
+#site-logo {
+  display: inline-block;
+  float: left;
+  @media screen and (max-width: 768px) {
+    float: none;
+  }
+}
