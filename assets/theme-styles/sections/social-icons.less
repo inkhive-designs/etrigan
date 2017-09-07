@@ -1,0 +1,54 @@
+.social-icons {
+  float: left;
+  display: inline-block;
+  padding-top: 20px;
+  @media screen and (max-width: 991px) {
+    float: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+.hvr-outline-out:hover:before, .hvr-outline-out:focus:before, .hvr-outline-out:active:before {
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+}
+.social-icons a {
+  font-size: 22px;
+  padding: 6px 14px;
+  padding-top: 5px;
+  color: @content;
+  float: none;
+  margin-right: 6px;
+  .transition( ease 0.2s );
+  min-width: 32px;
+  text-align: center;
+  &:before {
+    border: dotted 1px darken(@content, 10%);
+    border-radius: 3px;
+  }
+  @media screen and (max-width: 600px) {
+    float: none;
+  }
+  &:hover {
+    background: darken(@content, 10%);
+    color: white;
+    border-radius: 5px;
+
+  }
+
+}
+.hvr-curl-bottom-left{
+  &:before{
+    position: absolute;
+    border: none !important;
+    background: linear-gradient(45deg,#fff 41%,#aaa 50%,#ccc 56%,#fff 80%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .social-icons a{
+    padding: 0px !important;
+  }
+}

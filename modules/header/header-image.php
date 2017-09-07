@@ -1,6 +1,11 @@
 <div id="header-image">
-
-    <img src="<?php header_image(); ?>">
+    <?php if(is_page() && has_post_thumbnail()): ?>
+        <div id="featured-image">
+            <?php the_post_thumbnail('cover'); ?>
+        </div>
+    <?php else:?>
+        <img src="<?php header_image(); ?>">
+    <?php endif;?>
     <div class="site-branding-container">
         <div class="site-branding container">
             <?php if ( get_theme_mod('etrigan_logo') != "" ) : ?>

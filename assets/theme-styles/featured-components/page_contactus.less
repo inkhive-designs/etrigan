@@ -1,0 +1,130 @@
+.page{
+  .contact-info{
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 0px;
+    .cnt-left{
+      border-right: @background 2px solid;
+      border-radius:9px;
+    }
+    @media screen and (max-width: 767px) {
+      .cnt-left{
+        margin-bottom: 2px;
+        border-right:0px;
+      }
+    }
+
+    .cnt-left, .cnt-right{
+      .loc-logo{
+        margin-top: 16px;
+      }
+      background: @accent;
+      color: @background;
+      padding: 10px 10px 20px 20px;
+      min-height: 170px;
+      box-shadow: none;
+      border-radius: 7px;
+    }
+  }
+
+  .contact-map{
+    padding: 0px;
+    margin-bottom: 2px;
+  }
+  .contact-form{
+    padding: 0px !important;
+    .form-title{
+      text-align: left;
+      font-size: 28px;
+      font-weight: normal;
+      margin-top: 18px;
+      margin-bottom: 15px;
+
+    }
+    .contact-msg{
+      background: @accent;
+      color: @background;
+      padding: 10px 10px 20px 20px;
+      min-height: 170px;
+      box-shadow: none;
+    }
+    .call-img{
+      margin-left: 37px;
+      margin-top: 37px;
+    }
+    @media screen and (max-width: 767px) {
+      .call-img{
+        margin: 0px;
+      }
+    }
+    /* Add Drop Shadow, Rounded Corners, and Background to Contact Form 7 */
+    .contact-frm{
+      background: darken(@background,6%);
+      .wpcf7 input, textarea {
+        border: 1px solid @content;
+        font-size: 14px; margin: 0 10px 10px 0;
+        padding: 8px 10px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        box-shadow: 0 2px 2px darken(@background, 10%);
+        -moz-box-shadow: 0 2px 2px darken(@background, 10%);
+        -webkit-box-shadow: 0 2px 2px darken(@background, 10%);
+      }
+
+      /* Adjusting Widths for Input and Text Area fields to Contact Form 7 */
+
+      .wpcf7 input {
+        width: 296px;
+      }
+      @media screen and (max-width: 767px) {
+        .wpcf7 input {
+          width: 175px;
+        }
+      }
+
+      .wpcf7 textarea {
+        width: 80%;
+      }
+
+      /* Adding Icons to Text Fields for Contact Form 7 */
+
+      .wpcf7 .your-name input[type="text"], .name {
+
+        padding-left: 12px
+      }
+
+      .wpcf7 .your-email input[type="text"], .wpcf7 .your-email input[type="email"] {
+
+        padding-left: 12px
+      }
+
+      .wpcf7 .your-subject input[type="text"], .subject {
+
+        padding-left: 12px
+      }
+
+      /* Customizing the Submit Button for Contact Form 7 */
+
+      .wpcf7 input[type="submit"] {
+
+        background: @accent;
+        color: @onaccent;
+        padding: 10px 10px 20px 20px;
+        font-family: "Lato";
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      /* Optional For Genesis Users that use a Global margin-bottom variable for the
+
+      tag */
+      .wpcf7 p {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: .45rem;
+      }
+    }
+  }
+}

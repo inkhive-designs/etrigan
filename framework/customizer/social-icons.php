@@ -18,7 +18,37 @@ $social_networks = array( //Redefinied in Sanitization Function.
     'youtube' => __('Youtube','etrigan'),
     'flickr' => __('Flickr','etrigan'),
 );
+    //social icons style
+    $social_style = array(
+        'hvr-outline-out'  => __('Default', 'etrigan'),
+        //'hvr-ripple-out'  => __('Default', 'etrigan'),
+        'hvr-back-pulse'   => __('Style 1', 'etrigan'),
+        'hvr-curl-bottom-left'   => __('Style 2', 'etrigan'),
+        'hvr-outline-in'   => __('Style 3', 'etrigan'),
+        'hvr-glow'   => __('Style 4', 'etrigan'),
 
+    );
+    $wp_customize->add_setting(
+        'etrigan_social_icon_style_set', array(
+        'sanitize_callback' => 'etrigan_sanitize_social_style',
+        'default' => 'hvr-outline-out'
+    ));
+
+    function etrigan_sanitize_social_style( $input ) {
+        if ( in_array($input, array('hvr-back-pulse','hvr-curl-bottom-left','hvr-outline-out','hvr-outline-in','hvr-glow') ) )
+            return $input;
+        else
+            return '';
+    }
+
+    $wp_customize->add_control( 'etrigan_social_icon_style_set', array(
+        'settings' => 'etrigan_social_icon_style_set',
+        'label' => __('Social Icon Style ','etrigan'),
+        'description' => __('You can choose your icon style','etrigan'),
+        'section' => 'etrigan_social_section',
+        'type' => 'select',
+        'choices' => $social_style,
+    ));
 $social_count = count($social_networks);
 
 for ($x = 1 ; $x <= ($social_count - 3) ; $x++) :

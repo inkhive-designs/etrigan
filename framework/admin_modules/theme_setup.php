@@ -86,6 +86,7 @@ if ( ! function_exists( 'etrigan_setup' ) ) :
         add_image_size('etrigan-sq-thumb', 600,600, true );
         add_image_size('etrigan-thumb', 540,450, true );
         add_image_size('pop-thumb',542, 340, true );
+        add_image_size('etrigan-showcase-thumb', 800,900, true );
 
         //Declare woocommerce support
         add_theme_support('woocommerce');

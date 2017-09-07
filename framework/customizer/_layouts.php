@@ -24,7 +24,7 @@ $wp_customize->add_setting(
 );
 
 function etrigan_sanitize_blog_layout( $input ) {
-    if ( in_array($input, array('grid','grid_2_column','etrigan','etrigan_3_column') ) )
+    if ( in_array($input, array('grid','grid_2_column','etrigan','etrigan_3_column','insights') ) )
         return $input;
     else
         return '';
@@ -39,8 +39,10 @@ $wp_customize->add_control(
         'choices' => array(
             'grid' => __('Standard Blog Layout','etrigan'),
             'etrigan' => __('Etrigan Theme Layout','etrigan'),
-            'etrigan_3_column' => __('Etrigan Theme Layout (3 Columns)','etrigan'),
+            'insights' => __('Insight Blog Layout','etrigan'),
+             'etrigan_3_column' => __('Etrigan Theme Layout (3 Columns)','etrigan'),
             'grid_2_column' => __('Grid - 2 Column','etrigan'),
+
         )
     )
 );

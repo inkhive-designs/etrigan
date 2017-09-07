@@ -21,6 +21,7 @@ require_once get_template_directory().'/framework/customizer/_googlefonts.php';
 require_once get_template_directory().'/framework/customizer/featured-mu.php';
 require_once get_template_directory().'/framework/customizer/featured-umega.php';
 require_once get_template_directory().'/framework/customizer/_layouts.php';
+require_once get_template_directory().'/framework/customizer/_page-layouts.php';
 require_once get_template_directory().'/framework/customizer/_sanitization.php';
 require_once get_template_directory().'/framework/customizer/header.php';
 require_once get_template_directory().'/framework/customizer/navigation.php';

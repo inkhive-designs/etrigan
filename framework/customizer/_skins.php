@@ -105,7 +105,10 @@ $wp_customize->add_setting(
 $skins = array( 'default' => __('Default(blue)','etrigan'),
     'orange' =>  __('Orange','etrigan'),
     'red' =>  __('Red','etrigan'),
+    'posy' =>  __('Posy','etrigan'),
+    'grape' =>  __('Grape','etrigan'),
 );
+
 
 $wp_customize->add_control(
     'etrigan_skin',array(
@@ -118,7 +121,7 @@ $wp_customize->add_control(
 );
 
 function etrigan_sanitize_skin( $input ) {
-    if ( in_array($input, array('default','orange','red') ) )
+    if ( in_array($input, array('default','orange','red','posy','grape') ) )
         return $input;
     else
         return '';

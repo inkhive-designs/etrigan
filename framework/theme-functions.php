@@ -229,6 +229,27 @@ function etrigan_hex2rgb($hex) {
 function etrigan_fade($color, $val) {
 	return "rgba(".etrigan_hex2rgb($color).",". $val.")";
 }
+/*
+** Sticky Menu Function
+*/
+function etrigan_stick_menu() {
+    if (is_admin_bar_showing() ) {
+        $script = "jQuery(document).ready(function() {
+				  	if (jQuery(window).width() > 768) {
+				  		jQuery('#site-navigation').scrollToFixed({ marginTop: 32 });
+				  		}
+				});";
+
+    } else {
+        $script = "jQuery(document).ready(function() {
+					if (jQuery(window).width() > 768)
+						jQuery('#site-navigation').scrollToFixed();
+				});";
+    }
+
+    wp_add_inline_script('etrigan-custom-js', $script);
+}
+add_action('wp_enqueue_scripts', 'etrigan_stick_menu');
 
 
 /*

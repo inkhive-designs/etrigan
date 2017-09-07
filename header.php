@@ -27,5 +27,6 @@
 		<?php endif; ?>
 		<?php get_template_part('framework/featured-components/coverflow', 'posts'); ?>
 		<?php get_template_part('framework/featured-components/featured', 'posts'); ?>
+        <?php get_template_part('framework/featured-components/featured', 'posts_showcase'); ?>
 	
 		<div id="content" class="site-content container">

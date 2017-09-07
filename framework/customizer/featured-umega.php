@@ -151,8 +151,6 @@ $wp_customize->add_control(
 );
 
 
-
-
 //SQUARE BOXES
 $wp_customize->add_section(
     'etrigan_a_fc_boxes',
@@ -208,5 +206,84 @@ $wp_customize->add_control(
         )
     )
 );
+
+//featured-post showcase
+    $wp_customize->add_section(
+        'etrigan_fpost_showcase',
+        array(
+            'title'     => 'Featured Posts Showcase',
+            'priority'  => 40,
+            'panel'     => 'etrigan_a_fcp_panel',
+        )
+    );
+    $wp_customize->add_setting(
+        'etrigan_fpost_showcase_enable',
+        array( 'sanitize_callback' => 'etrigan_sanitize_checkbox' )
+    );
+
+    $wp_customize->add_control(
+        'etrigan_fpost_showcase_enable', array(
+            'settings' => 'etrigan_fpost_showcase_enable',
+            'label'    => __( 'Enable Featured Posts Showcase .', 'etrigan' ),
+            'section'  => 'etrigan_fpost_showcase',
+            'type'     => 'checkbox',
+        )
+    );
+    $wp_customize->add_setting(
+        'etrigan_fpost_showcase_title',
+        array( 'sanitize_callback' => 'sanitize_text_field' )
+    );
+    $wp_customize->add_control(
+        'etrigan_fpost_showcase_title', array(
+            'settings' => 'etrigan_fpost_showcase_title',
+            'label'    => __( 'Title for the Showcase','etrigan' ),
+            'decription' => __('It will be appear at left side of the showcase area.','etrigan'),
+            'section'  => 'etrigan_fpost_showcase',
+            'type'     => 'text',
+        )
+    );
+    $wp_customize->add_setting(
+        'etrigan_fpost_showcase_desc',
+        array( 'sanitize_callback' => 'sanitize_text_field' )
+    );
+    $wp_customize->add_control(
+        'etrigan_fpost_showcase_desc', array(
+            'settings' => 'etrigan_fpost_showcase_desc',
+            'label'    => __( 'Description for the Showcase','etrigan' ),
+            'decription' => __('It will be appear at left side of the showcase area.','etrigan'),
+            'section'  => 'etrigan_fpost_showcase',
+            'type'     => 'textarea',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'etrigan_fpost_showcase_post_title',
+        array( 'sanitize_callback' => 'sanitize_text_field' )
+    );
+
+    $wp_customize->add_control(
+        'etrigan_fpost_showcase_post_title', array(
+            'settings' => 'etrigan_fpost_showcase_post_title',
+            'label'    => __( 'Title for the Featured Posts','etrigan' ),
+            'section'  => 'etrigan_fpost_showcase',
+            'type'     => 'text',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'fpost_showcase_cat',
+        array( 'sanitize_callback' => 'etrigan_sanitize_product_category' )
+    );
+    $wp_customize->add_control(
+        new Etrigan_WP_Customize_Category_Control(
+            $wp_customize,
+            'fpost_showcase_cat',
+            array(
+                'label'    => __('Posts Category.','etrigan'),
+                'settings' => 'fpost_showcase_cat',
+                'section'  => 'etrigan_fpost_showcase'
+            )
+        )
+    );
 }
 add_action( 'customize_register', 'etrigan_customize_register_post_showcase' );

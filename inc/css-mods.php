@@ -53,6 +53,61 @@ function etrigan_custom_css_mods() {
 		$custom_css .= "#masthead #site-logo img { transform: scale(".$val."); -webkit-transform: scale(".$val."); -moz-transform: scale(".$val."); -ms-transform: scale(".$val."); }";
 		endif;
 
+
+
+
+// page & post fontsize
+    if(get_theme_mod('etrigan_content_page_post_fontsize_set')):
+        $pp_size_val = get_theme_mod('etrigan_content_page_post_fontsize_set');
+        if($pp_size_val=='small'):
+            $custom_css .= "#primary-mono .entry-content{ font-size:12px;}";
+        elseif ($pp_size_val=='medium'):
+            $custom_css .= "#primary-mono .entry-content{ font-size:16px;}";
+        elseif ($pp_size_val=='large'):
+            $custom_css .= "#primary-mono .entry-content{ font-size:18px;}";
+        elseif ($pp_size_val=='extra-large'):
+            $custom_css .= "#primary-mono .entry-content{ font-size:20px;}";
+        endif;
+    else:
+        $custom_css .= "#primary-mono .entry-content{ font-size:14px;}";
+    endif;
+
+    //site title font size
+    //var_dump(get_theme_mod('etrigan_content_site_fontsize_set'));
+    if(get_theme_mod('etrigan_content_site_title_fontsize_set')):
+        $site_title_size_val=get_theme_mod('etrigan_content_site_title_fontsize_set');
+        if($site_title_size_val != 'default'):
+            $custom_css .= "#header-image .site-title {font-size:".$site_title_size_val."px !important;}";
+        else:
+            $custom_css .= "#header-image .site-title {font-size:55"."px;}";
+        endif;
+    endif;
+
+    //site desc font size
+    //var_dump(get_theme_mod('etrigan_content_site_desc_fontsize_set'));
+    if(get_theme_mod('etrigan_content_site_desc_fontsize_set')):
+        $site_desc_size_val=get_theme_mod('etrigan_content_site_desc_fontsize_set');
+        if($site_desc_size_val != 'default'):
+            $custom_css .= "#header-image .site-description{font-size:".$site_desc_size_val."px !important;}";
+        else:
+            $custom_css .= "#header-image .site-description {font-size:15"."px;}";
+        endif;
+    endif;
+
+
+
+    //for contact page title.
+    if(get_theme_mod('etrigan_contactus_title_disable_set', true)):
+        $custom_css .= ".page-template-template-page-contactus .entry-title{display:none;}";
+    endif;
+
+    //for contact page title.
+    if(get_theme_mod('etrigan_contactus_content_disable_set', true)):
+        $custom_css .= ".page-template-template-page-contactus .entry-content{display:none;}";
+    endif;
+
+
+
 	wp_add_inline_style( 'etrigan-main-theme-style', $custom_css );
 	
 }
