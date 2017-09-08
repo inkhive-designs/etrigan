@@ -18,14 +18,14 @@ add_action( 'customize_register', 'etrigan_customize_register' );
 
 //Load All Individual Settings Based on Sections/Panels.
 require_once get_template_directory().'/framework/customizer/_googlefonts.php';
-require_once get_template_directory().'/framework/customizer/featured-mu.php';
-require_once get_template_directory().'/framework/customizer/featured-umega.php';
 require_once get_template_directory().'/framework/customizer/_layouts.php';
 require_once get_template_directory().'/framework/customizer/_page-layouts.php';
 require_once get_template_directory().'/framework/customizer/_sanitization.php';
 require_once get_template_directory().'/framework/customizer/header.php';
 require_once get_template_directory().'/framework/customizer/navigation.php';
 require_once get_template_directory().'/framework/customizer/_skins.php';
+require_once get_template_directory().'/framework/customizer/featured-products.php';
+require_once get_template_directory().'/framework/customizer/featured-posts.php';
 require_once get_template_directory().'/framework/customizer/social-icons.php';
 require_once get_template_directory().'/framework/customizer/misc-scripts.php';
 

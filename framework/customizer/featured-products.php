@@ -184,64 +184,63 @@ function etrigan_customize_register_product_showcase( $wp_customize ) {
                 )
             )
         );
+        
+        $wp_customize->add_section(
+		    'etrigan_fc_boxes',
+		    array(
+		        'title'     => __('Square Boxes','etrigan'),
+		        'priority'  => 10,
+		        'panel'     => 'etrigan_fcp_panel'
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'etrigan_box_enable',
+		    array( 'sanitize_callback' => 'etrigan_sanitize_checkbox' )
+		);
+		
+		$wp_customize->add_control(
+		    'etrigan_box_enable', array(
+		        'settings' => 'etrigan_box_enable',
+		        'label'    => __( 'Enable Square Boxes & Posts Slider.', 'etrigan' ),
+		        'section'  => 'etrigan_fc_boxes',
+		        'type'     => 'checkbox',
+		    )
+		);
+		
+		
+		$wp_customize->add_setting(
+		    'etrigan_box_title',
+		    array( 'sanitize_callback' => 'sanitize_text_field' )
+		);
+		
+		$wp_customize->add_control(
+		    'etrigan_box_title', array(
+		        'settings' => 'etrigan_box_title',
+		        'label'    => __( 'Title for the Boxes','etrigan' ),
+		        'section'  => 'etrigan_fc_boxes',
+		        'type'     => 'text',
+		    )
+		);
+		
+		$wp_customize->add_setting(
+		    'etrigan_box_cat',
+		    array( 'sanitize_callback' => 'etrigan_sanitize_product_category' )
+		);
+		
+		$wp_customize->add_control(
+		    new Etrigan_WP_Customize_Product_Category_Control(
+		        $wp_customize,
+		        'etrigan_box_cat',
+		        array(
+		            'label'    => __('Product Category.','etrigan'),
+		            'settings' => 'etrigan_box_cat',
+		            'section'  => 'etrigan_fc_boxes'
+		        )
+		    )
+		);
 
 
     endif; //end class exists woocommerce
-
-
-$wp_customize->add_section(
-    'etrigan_fc_boxes',
-    array(
-        'title'     => __('Square Boxes','etrigan'),
-        'priority'  => 10,
-        'panel'     => 'etrigan_fcp_panel'
-    )
-);
-
-$wp_customize->add_setting(
-    'etrigan_box_enable',
-    array( 'sanitize_callback' => 'etrigan_sanitize_checkbox' )
-);
-
-$wp_customize->add_control(
-    'etrigan_box_enable', array(
-        'settings' => 'etrigan_box_enable',
-        'label'    => __( 'Enable Square Boxes & Posts Slider.', 'etrigan' ),
-        'section'  => 'etrigan_fc_boxes',
-        'type'     => 'checkbox',
-    )
-);
-
-
-$wp_customize->add_setting(
-    'etrigan_box_title',
-    array( 'sanitize_callback' => 'sanitize_text_field' )
-);
-
-$wp_customize->add_control(
-    'etrigan_box_title', array(
-        'settings' => 'etrigan_box_title',
-        'label'    => __( 'Title for the Boxes','etrigan' ),
-        'section'  => 'etrigan_fc_boxes',
-        'type'     => 'text',
-    )
-);
-
-$wp_customize->add_setting(
-    'etrigan_box_cat',
-    array( 'sanitize_callback' => 'etrigan_sanitize_product_category' )
-);
-
-$wp_customize->add_control(
-    new Etrigan_WP_Customize_Product_Category_Control(
-        $wp_customize,
-        'etrigan_box_cat',
-        array(
-            'label'    => __('Product Category.','etrigan'),
-            'settings' => 'etrigan_box_cat',
-            'section'  => 'etrigan_fc_boxes'
-        )
-    )
-);
 }
 add_action( 'customize_register', 'etrigan_customize_register_product_showcase' );

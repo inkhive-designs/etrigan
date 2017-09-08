@@ -211,7 +211,7 @@ $wp_customize->add_control(
     $wp_customize->add_section(
         'etrigan_fpost_showcase',
         array(
-            'title'     => 'Featured Posts Showcase',
+            'title'     => 'Featured Posts Area 4',
             'priority'  => 40,
             'panel'     => 'etrigan_a_fcp_panel',
         )
@@ -229,34 +229,8 @@ $wp_customize->add_control(
             'type'     => 'checkbox',
         )
     );
-    $wp_customize->add_setting(
-        'etrigan_fpost_showcase_title',
-        array( 'sanitize_callback' => 'sanitize_text_field' )
-    );
-    $wp_customize->add_control(
-        'etrigan_fpost_showcase_title', array(
-            'settings' => 'etrigan_fpost_showcase_title',
-            'label'    => __( 'Title for the Showcase','etrigan' ),
-            'decription' => __('It will be appear at left side of the showcase area.','etrigan'),
-            'section'  => 'etrigan_fpost_showcase',
-            'type'     => 'text',
-        )
-    );
-    $wp_customize->add_setting(
-        'etrigan_fpost_showcase_desc',
-        array( 'sanitize_callback' => 'sanitize_text_field' )
-    );
-    $wp_customize->add_control(
-        'etrigan_fpost_showcase_desc', array(
-            'settings' => 'etrigan_fpost_showcase_desc',
-            'label'    => __( 'Description for the Showcase','etrigan' ),
-            'decription' => __('It will be appear at left side of the showcase area.','etrigan'),
-            'section'  => 'etrigan_fpost_showcase',
-            'type'     => 'textarea',
-        )
-    );
-
-    $wp_customize->add_setting(
+   
+   $wp_customize->add_setting(
         'etrigan_fpost_showcase_post_title',
         array( 'sanitize_callback' => 'sanitize_text_field' )
     );
@@ -269,6 +243,22 @@ $wp_customize->add_control(
             'type'     => 'text',
         )
     );
+   
+    $wp_customize->add_setting(
+        'etrigan_fpost_showcase_desc',
+        array( 'sanitize_callback' => 'sanitize_text_field' )
+    );
+    $wp_customize->add_control(
+        'etrigan_fpost_showcase_desc', array(
+            'settings' => 'etrigan_fpost_showcase_desc',
+            'label'    => __( 'Description for the Featured Posts Area','etrigan' ),
+            'decription' => __('It will be appear at left side of the showcase area.','etrigan'),
+            'section'  => 'etrigan_fpost_showcase',
+            'type'     => 'textarea',
+        )
+    );
+
+    
 
     $wp_customize->add_setting(
         'fpost_showcase_cat',

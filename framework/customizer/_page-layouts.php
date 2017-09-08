@@ -4,8 +4,8 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
     $wp_customize->add_panel(
         'etrigan_page_layout_panel',
         array(
-            'title' => __('Custom Page', 'etrigan'),
-            'priority'  => 30,
+            'title' => __('Custom Page Templates', 'etrigan'),
+            'priority'  => 60,
             'default' => 'false'
         )
     );
@@ -27,9 +27,8 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
             $wp_customize,
             'etrigan_page_war',
             array(
-                'label' => __('Warning!','etrigan'),
-                'description' => __('If you want to use Contact Page layout, 
-                then you have to create a Contact Page first.','etrigan'),
+                'label' => __('Important Note: ','etrigan'),
+                'description' => __('To use this Feature, go to Pages - Add New, and create a new page and set its Template to Contact Us.','etrigan'),
                 'section' => 'etrigan_contactus_section',
                 'settings' => 'etrigan_page_war',
 

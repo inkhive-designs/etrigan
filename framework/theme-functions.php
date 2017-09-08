@@ -153,6 +153,8 @@ if ( class_exists('WP_Customize_Control') && class_exists('woocommerce') ) {
         }
     }
 }    
+
+
 if (class_exists('WP_Customize_Control')) {
 	class Etrigan_WP_Customize_Upgrade_Control extends WP_Customize_Control {
         /**
