@@ -30,7 +30,7 @@
                             <?php if (has_post_thumbnail()) : ?>
                                 <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('etrigan-showcase-thumb'); ?></a>
                             <?php else : ?>
-                                <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder3.jpg"; ?>"></a>
+                                <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder3    .jpg"; ?>"></a>
                             <?php endif; ?>
 
                         </div>

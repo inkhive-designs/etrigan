@@ -70,7 +70,7 @@ Version 1.0.1.5
 	
 Version 1.0.1.6
 
-	i) Changed Footer Link to nofollow	
+	i) Changed Footer Link to nofollow
 	
 Version 1.0.2
 
@@ -82,4 +82,16 @@ Version 1.0.3
 	
 Version 1.0.4
 
-	i) Fixed WooCOmmerce 3.0 Issues	
+	i) Fixed WooCOmmerce 3.0 Issues
+
+Version 1.0.5
+
+    i) File structure switched to new framework.
+    ii) Added 4 new socail icons style.
+    iii) Added new contact page template.
+    iv) Added typography option for post/page and site tile/description.
+    v) Added new featured posts showcase.
+    vi) Added scroll fix menu featured.
+    vii) Added 2 new skins.
+    viii) Added full page template.
+    ix) Added header image option.
