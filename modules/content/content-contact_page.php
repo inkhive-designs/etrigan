@@ -14,23 +14,12 @@
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
-        <?php
-        /* translators: %s: Name of current post */
-        the_content( sprintf(
-            __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'etrigan' ),
-            the_title( '<span class="screen-reader-text">"', '"</span>', false )
-        ) );
-        ?>
-    </div><!-- .entry-content -->
-    <div class="col-md-12 col-sm-12 contact-info">
-
-
-        <div class="col-md-6 col-sm-6 cnt-left">
-            <div class="loc-logo col-md-2 col-sm-2">
+    <div class="col-md-12 col-sm-12 col-xs-12 contact-info">
+        <div class="col-md-6 col-sm-6 col-xs-12 cnt-left">
+            <div class="loc-logo col-md-2 col-sm-2 col-xs-2">
                 <i class="fa fa-globe"  style="font-size:60px;"></i>
             </div>
-            <div class="contact-info-inner col-md-10 col-sm-10">
+            <div class="contact-info-inner col-md-10 col-sm-10 col-xs-10">
                 <div class="site_title">
                     <h3><?php echo bloginfo('name') ?></h3>
                 </div>
@@ -44,11 +33,11 @@
         <!-- <div class="col-md-1 col-sm-1 cnt-center"></div>-->
 
 
-        <div class="col-md-6 cnt-right">
-            <div class="loc-logo col-md-2 col-sm-2">
+        <div class="col-md-6 col-sm-6 col-xs-12 cnt-right">
+            <div class="loc-logo col-md-2 col-sm-2 col-xs-2">
                 <i class="fa fa-envelope-o " style="font-size:60px;"></i>
             </div>
-            <div class="contact-info-inner col-md-10 col-sm-10">
+            <div class="contact-info-inner col-md-10 col-sm-10 col-xs-10">
                 <div class="site_contact_title">
                     <h3>Connect With Us</h3>
                 </div>
@@ -89,16 +78,25 @@
 
         </div>
     </div>
-    <div class="col-md-12 contact-form">
-
-        <div class="contact-frm col-md-6">
+    <div class="col-md-12 col-sm-12 contact-form">
+    <?php if(get_theme_mod('etrigan_contactform_title_set')): ?>
+        <div class="contact-frm col-md-6 col-sm-12 col-xs-12">
             <div class="form-title"><?php echo get_theme_mod('etrigan_contactform_title_set')?></div>
             <?php echo do_shortcode(get_theme_mod('etrigan_contactform_shortcode_set'));?>
         </div>
-        <div class="col-md-6 contact-msg">
-            <h2>Get In Touch</h2>
-            <p><?php echo get_theme_mod('etrigan_contactform_message_set') ?></p>
+        <?php endif;?>
+        <?php if(!get_theme_mod('etrigan_contactus_content_disable_set')): ?>
+        <div class="col-md-6 col-sm-12 col-xs-12 contact-msg">
+                <?php
+                /* translators: %s: Name of current post */
+                the_content( sprintf(
+                    __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'etrigan' ),
+                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                ) );
+                ?>
         </div>
+        <?php endif;?>
+        <div class="col-md-6 col-sm-12 col-xs-12 call-img-outer">
         <img class="call-img" src="<?php
         if(get_theme_mod('etrigan_contactus_form_img_set')):
             echo get_theme_mod('etrigan_contactus_form_img_set');
@@ -106,6 +104,7 @@
             echo get_template_directory_uri().'/assets/images/call.png';
         endif;
         ?>">
+        </div>
     </div>
 
 

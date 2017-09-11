@@ -3,9 +3,8 @@
  * @package Etrigan
  */
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-6 col-sm-6 grid grid_2_column insight'); ?>>
-    <div class="grid col-md-12 col-sm-12">
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-6 col-sm-6 col-xs-12 grid grid_2_column insight'); ?>>
+    <div class="grid col-md-12 col-sm-12 col-xs-12">
         <figure class="effect-julia">
             <div>
                 <?php if (has_post_thumbnail()) : ?>
@@ -20,10 +19,12 @@
             <figcaption>
                 <h2> <?php  echo the_title(); ?></h2>
                 <div>
-                    <?php $excerpt_val = get_the_excerpt();?>
-                    <p><?php echo substr($excerpt_val, 0 , 25 );?></p>
-                    <p><?php echo substr($excerpt_val, 26 , 30 );?></p>
-                    <p><?php echo substr($excerpt_val, 31 , 38 );?></p>
+                    <?php $excerpt_val = get_the_excerpt();
+                    $ex = explode(" ",$excerpt_val); ?>
+                    <p><?php  for ($i =  0; $i < 3; $i++) echo $ex[$i]." "; ?></p><div class="clearfix"></div>
+                    <p><?php  for ($i =  3; $i < 7; $i++) echo $ex[$i]." "; ?></p><div class="clearfix"></div>
+                    <p><?php  for ($i =  7; $i < 13; $i++): echo $ex[$i]." "; endfor; echo "..." ?></p>
+
                 </div>
                 <a href="<?php the_permalink();?>"></a>
             </figcaption>

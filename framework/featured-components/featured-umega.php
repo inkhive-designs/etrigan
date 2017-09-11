@@ -1,16 +1,16 @@
-<?php if(get_theme_mod('etrigan_fpost_showcase_enable')):?>
-    <div id="featured-umega-showcase" class="featured-section-area">
+<?php if(get_theme_mod('etrigan_fumega_enable')):?>
+    <div id="featured-umega" class="featured-section-area container">
         <div class="col-md-12 col-sm-12 showcase-cnt">
             <div class="col-md-3 col-sm-3 showcase-static">
                 <div class="showcase-static-inner">
                     <div class="showcase-title">
-                        <?php if(get_theme_mod('etrigan_fpost_showcase_post_title')):
-                            echo get_theme_mod('etrigan_fpost_showcase_post_title');?>
+                        <?php if(get_theme_mod('etrigan_fumega_showcase_title')):
+                            echo get_theme_mod('etrigan_fumega_showcase_title');?>
                         <?php endif;?>
                     </div>
                     <div class="showcase-desc">
-                        <?php if(get_theme_mod('etrigan_fpost_showcase_desc')):
-                            echo get_theme_mod('etrigan_fpost_showcase_desc');?>
+                        <?php if(get_theme_mod('etrigan_fumega_showcase_desc')):
+                            echo get_theme_mod('etrigan_fumega_showcase_desc');?>
                         <?php endif;?>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
 
             <?php /* Start the Loop */ $count=0; ?>
             <?php
-            $args = array( 'posts_per_page' => 3, 'category' => get_theme_mod('fpost_showcase_cat') );
+            $args = array( 'posts_per_page' => 3, 'category' => get_theme_mod('etrigan_fumega_cat') );
             $lastposts = get_posts( $args );
             foreach ( $lastposts as $post ) :
                 setup_postdata( $post ); ?>
@@ -30,9 +30,8 @@
                             <?php if (has_post_thumbnail()) : ?>
                                 <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('etrigan-showcase-thumb'); ?></a>
                             <?php else : ?>
-                                <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder3    .jpg"; ?>"></a>
+                                <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder-sq.jpg"; ?>"></a>
                             <?php endif; ?>
-
                         </div>
                         <figcaption>
                             <h2> <?php  echo the_title(); ?></h2>

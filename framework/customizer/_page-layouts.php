@@ -201,22 +201,7 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
 
         )
     );
-    $wp_customize->add_setting(
-        'etrigan_contactform_message_set',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
-
-    $wp_customize->add_control(
-        'etrigan_contactform_message_set', array(
-            'settings' => 'etrigan_contactform_message_set',
-            'label'    => __( 'Contact Form Message.', 'etrigan' ),
-            'description' => __('It is show on right side of the Contact Form','etrigan'),
-            'section'  => 'etrigan_contactus_section',
-            'type'     => 'textarea',
-
-        )
-    );
-    //image-upload//
+       //image-upload//
     $wp_customize->add_setting(
         'etrigan_contactus_form_img_set');
 

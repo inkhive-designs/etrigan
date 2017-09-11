@@ -1,51 +1,41 @@
-/* Featured Products Grid */
-.featured-grid-container {
-  .fg-wrapper {
-    .fg-item-container {
-      padding: 0 5px 8px 5px;
-    }
-    .fg-item {
-      position: relative;
-      img {
-        .transform(scale(1));
-        .transition(0.4s all ease);
-      }
-      overflow: hidden;
-      &:hover {
-        .product-details {
-          opacity: 1;
-          .transform(scale(1));
-        }
-        img {
-          .transform(scale(1.2));
-          .transition(3s all ease);
-        }
-      }
-    }
+
+/* swiper fp - 3d Cube & grid */
+#featured-products, #featured-posts {
+  position: relative;
+  padding: 15px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+/* 3d Cube */
+.fp-container,.fposts-container {
+  width: auto;
+  height: auto;
+  .swiper-slide {
     .product-details {
-      position: absolute;
-      padding: 15px;
-      @media screen and (max-width: 991px)  {
-        padding: 5px;
-      }
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: fade(#333, 50%);
-      color: white;
+      background: fade(#333, 80%);
       text-align: center;
-      opacity: 0;
-      .transform(scale(0.8));
-      .transition(0.5s all ease);
-      h3 { font-size: 14px; }
+      position: absolute;
+      bottom: 5px;;
+      left: 5px;
+      right: 5px;
+      padding: 7px;
+      color: white;
       ins {
         background: none;
+      }
+      h3 {
+        margin: 0;
+        @media screen and (max-width: 991px) {
+          font-size: 14px;
+        }
+
       }
     }
   }
 }
-
+.swiper-wrapper {
+  margin-bottom: 25px;
+}
 
 /* top slider */
 .slider-container {

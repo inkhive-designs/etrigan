@@ -24,8 +24,13 @@ require_once get_template_directory().'/framework/customizer/_sanitization.php';
 require_once get_template_directory().'/framework/customizer/header.php';
 require_once get_template_directory().'/framework/customizer/navigation.php';
 require_once get_template_directory().'/framework/customizer/_skins.php';
-require_once get_template_directory().'/framework/customizer/featured-products.php';
-require_once get_template_directory().'/framework/customizer/featured-posts.php';
+require_once get_template_directory().'/framework/customizer/fproducts-square-boxes.php';
+require_once get_template_directory().'/framework/customizer/3d-cube-products-slider.php';
+require_once get_template_directory().'/framework/customizer/slider.php';
+require_once get_template_directory().'/framework/customizer/fposts-square-boxes.php';
+require_once get_template_directory().'/framework/customizer/top-coverflow-slider.php';
+require_once get_template_directory().'/framework/customizer/3d-cube-posts-slider.php';
+require_once get_template_directory().'/framework/customizer/featured-umega.php';
 require_once get_template_directory().'/framework/customizer/social-icons.php';
 require_once get_template_directory().'/framework/customizer/misc-scripts.php';
 

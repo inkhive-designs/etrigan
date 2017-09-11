@@ -1,8 +1,10 @@
 <?php if (get_theme_mod('etrigan_a_coverflow_enable') && is_front_page() ) : ?>
 <div id="coverflow-posts" class="container">
-	<div class="section-title title-font">
-		<?php echo esc_html( get_theme_mod('etrigan_a_coverflow_title',__('Featured Products','etrigan')) ); ?>
-	</div>
+    <?php if ( get_theme_mod('etrigan_a_coverflow_title')) : ?>
+        <div class="section-title title-font">
+            <?php echo esc_html( get_theme_mod('etrigan_a_coverflow_title',__('Featured Products','etrigan')) ); ?>
+        </div>
+    <?php endif;?>
 	<div class="swiper-container-posts">
 	        <div class="swiper-wrapper">
 	        	 <?php
@@ -21,7 +23,9 @@
 			        	
 			        	if ( has_post_thumbnail() ) :
 			        		$image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $loop->post->ID), 'etrigan-sq-thumb' ); 
-							$image_url = $image_data[0]; 
+							$image_url = $image_data[0];
+                        else:
+                            $image_url = get_template_directory_uri()."/assets/images/placeholder-sq.jpg";
 						endif;		
 			        	
 			        ?>

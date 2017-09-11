@@ -81,7 +81,15 @@ figure.effect-julia p {
   transform: translate3d(0,0,0);
 }
 /* Media queries */
+@media screen and (max-width: 981px) {
+  .insight{
+    padding: 0px;
+    margin: 0px;
+  }
+
+}
 @media screen and (max-width: 768px) {
+
   figure.effect-julia p {
     display: none;
   }
@@ -95,4 +103,16 @@ figure.effect-julia p {
     margin: 10px auto !important;
     width: 100% !important;
   }
+}
+@media screen and (min-width: 250px) and (max-width: 350px) {
+  .grid figure h2 {
+    font-size: 18px;
+  }
+
+}
+@media screen and (min-width: 351px) and (max-width: 981px) {
+  .grid figure h2 {
+    font-size: 24px;
+  }
+
 }

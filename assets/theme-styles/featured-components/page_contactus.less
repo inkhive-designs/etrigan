@@ -12,6 +12,9 @@
         margin-bottom: 2px;
         border-right:0px;
       }
+      .cnt-left, .cnt-right{
+        min-height: auto;
+      }
     }
 
     .cnt-left, .cnt-right{
@@ -26,6 +29,14 @@
       border-radius: 7px;
     }
   }
+  @media screen and (min-width:600px) and (max-width:981px){
+    .contact-info .contact-info-inner {
+      .site_title,.site_address,.site_contact_title,.site_email{
+        margin-left: 20px !important;
+      }
+
+    }
+  }
 
   .contact-map{
     padding: 0px;
@@ -34,23 +45,25 @@
   .contact-form{
     padding: 0px !important;
     .form-title{
-      text-align: left;
+      text-align: center;
       font-size: 28px;
-      font-weight: normal;
+      font-weight: 500;
       margin-top: 18px;
-      margin-bottom: 15px;
+      margin-bottom: 35px;
+      border-bottom: darken(@background, 30%) 1px solid;
+
 
     }
     .contact-msg{
+      overflow: hidden;
       background: @accent;
       color: @background;
-      padding: 10px 10px 20px 20px;
+      padding: 30px;
       min-height: 170px;
       box-shadow: none;
     }
-    .call-img{
-      margin-left: 37px;
-      margin-top: 37px;
+    .call-img-outer{
+      text-align: center;
     }
     @media screen and (max-width: 767px) {
       .call-img{
@@ -73,18 +86,32 @@
       }
 
       /* Adjusting Widths for Input and Text Area fields to Contact Form 7 */
+      .wpcf7{
+        text-align: center;
+        label{
+          font-weight: 500;
+          text-align: left;
+        }
+      }
 
       .wpcf7 input {
-        width: 296px;
+        width: 297px;
       }
       @media screen and (max-width: 767px) {
         .wpcf7 input {
-          width: 175px;
+          width: 100% !important;
+
         }
       }
 
       .wpcf7 textarea {
-        width: 80%;
+        //width: 80%;
+        padding-left: 12px;
+        width: 297px;
+
+      }
+      .wpcf7-submit{
+        padding-left: 12px;
       }
 
       /* Adding Icons to Text Fields for Contact Form 7 */
@@ -94,7 +121,7 @@
         padding-left: 12px
       }
 
-      .wpcf7 .your-email input[type="text"], .wpcf7 .your-email input[type="email"] {
+      .wpcf7 .your-email input[type="text"], .wpcf7 .your-email input[type="email"]{
 
         padding-left: 12px
       }
@@ -104,16 +131,20 @@
         padding-left: 12px
       }
 
+
       /* Customizing the Submit Button for Contact Form 7 */
 
       .wpcf7 input[type="submit"] {
 
         background: @accent;
-        color: @onaccent;
+        color: @background;
         padding: 10px 10px 20px 20px;
         font-family: "Lato";
-        font-weight: 400;
+        font-weight: lighter;
         text-transform: uppercase;
+        font-size: 18px;
+        padding-left: 12px;
+        margin-left: 17px;
       }
 
       /* Optional For Genesis Users that use a Global margin-bottom variable for the
@@ -127,4 +158,36 @@
       }
     }
   }
+}
+
+//media query
+@media screen and (max-width: 981px){
+  .cnt-right,.cnt-left{
+    .fa{
+      font-size: 44px !important;
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .page-template-template-page-contactus{
+    #primary-mono .entry-title{
+      font-size: 24px;
+    }
+    .contact-form {
+      .form-title {
+        font-size: 24px;
+      }
+    }
+    .contact-form .wpcf7 textarea {
+      padding-left: 12px;
+      width: 100% !important;
+    }
+    .contact-form .wpcf7-submit{
+     // width: 100% !important;
+    }
+    .wpcf7 input[type="submit"] {
+      margin-left: 0px !important;
+    }
+  }
+
 }
