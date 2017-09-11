@@ -24,7 +24,7 @@
     }
   }
   .current {
-    background: #ddd;
+    background: @background;
   }
 }
 .pagination ul &>li &>a, .pagination ul &>li &>span {
@@ -33,10 +33,10 @@
   line-height: 20px;
   text-decoration: none;
   margin-right: 5px;
-  background-color: #f7f7f7;
-  border: 1px solid #eee;
+  background-color: @background;
+  border: 1px solid @content;
   display: inline-block;
-  color: #aaa;
+  color: @accent;
   &:hover {
     background: none;
   }

@@ -17,13 +17,24 @@
 
             </div>
             <figcaption>
-                <h2> <?php  echo the_title(); ?></h2>
+                <?php  $ttl= get_the_title();
+                                $range_ttl= strlen($ttl);
+                                if($range_ttl > 16):?>
+                                    <h2 style="font-size: 18px;">
+                                        <?php echo the_title();?>
+                                    </h2>
+                                    <?php else:?>
+                                    <h2>
+                                        <?php echo the_title();?>
+                                    </h2>
+               <?php endif;  ?>
+
                 <div>
                     <?php $excerpt_val = get_the_excerpt();
                     $ex = explode(" ",$excerpt_val); ?>
                     <p><?php  for ($i =  0; $i < 3; $i++) echo $ex[$i]." "; ?></p><div class="clearfix"></div>
                     <p><?php  for ($i =  3; $i < 7; $i++) echo $ex[$i]." "; ?></p><div class="clearfix"></div>
-                    <p><?php  for ($i =  7; $i < 13; $i++): echo $ex[$i]." "; endfor; echo "..." ?></p>
+                    <p><?php  for ($i =  7; $i < 11; $i++): echo $ex[$i]." "; endfor; echo "..." ?></p>
 
                 </div>
                 <a href="<?php the_permalink();?>"></a>

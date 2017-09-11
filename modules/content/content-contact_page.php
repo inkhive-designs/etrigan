@@ -42,29 +42,7 @@
                     <h3>Connect With Us</h3>
                 </div>
                 <div class="site_email">
-                        <span>
-                            <?php if(get_theme_mod('etrigan_contactus_email_set1')):
-                                echo get_theme_mod('etrigan_contactus_email_set1');
-                            endif;
-                            ?>
-                        </span><div class="clearfix"></div>
-                    <span>
-                            <?php if(get_theme_mod('etrigan_contactus_email_set2')):
-                                echo get_theme_mod('etrigan_contactus_email_set2');
-                            endif;
-                            ?>
-                        </span><div class="clearfix"></div>
-                    <span>
-                            <?php if(get_theme_mod('etrigan_contactus_phone_set1')):
-                                echo get_theme_mod('etrigan_contactus_phone_set1');
-                            endif;
-                            ?>
-                        </span><div class="clearfix"></div>
-                    <span>
-                            <?php if(get_theme_mod('etrigan_contactus_phone_set2')):
-                                echo get_theme_mod('etrigan_contactus_phone_set2');
-                            endif;
-                            ?>
+                    <?php echo get_theme_mod('etrigan_conn_with_us_set') ?>
                 </div>
             </div>
 

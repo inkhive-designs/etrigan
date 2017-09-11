@@ -68,7 +68,7 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
     $wp_customize->add_setting(
         'etrigan_contactus_address_set',
         array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
+        );
 
     $wp_customize->add_control(
         'etrigan_contactus_address_set', array(
@@ -79,64 +79,25 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
 
         )
     );
-
     $wp_customize->add_setting(
-        'etrigan_contactus_phone_set1',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
-
-    $wp_customize->add_control(
-        'etrigan_contactus_phone_set1', array(
-            'settings' => 'etrigan_contactus_phone_set1',
-            'label'    => __( 'Enter Phone no 1.', 'etrigan' ),
-            'section'  => 'etrigan_contactus_section',
-            'type'     => 'text',
-
+        'etrigan_conn_with_us_set',
+        array( 'sanitize_callback' => 'etrigan_sanitize_text',
+            'default' => __('Cabin no.2, sector 8 Chandigarh (INDIA)
+            Email: info@example.com','etrigan')
         )
     );
-    $wp_customize->add_setting(
-        'etrigan_contactus_phone_set2',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
 
     $wp_customize->add_control(
-        'etrigan_contactus_phone_set2', array(
-            'settings' => 'etrigan_contactus_phone_set2',
-            'label'    => __( 'Enter Phone no 2.', 'etrigan' ),
+        'etrigan_conn_with_us_set', array(
+            'settings' => 'etrigan_conn_with_us_set',
+            'label'    => __( 'Connect with us', 'etrigan' ),
             'section'  => 'etrigan_contactus_section',
-            'type'     => 'text',
+            'type'     => 'textarea',
 
         )
     );
 
-    $wp_customize->add_setting(
-        'etrigan_contactus_email_set1',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
 
-    $wp_customize->add_control(
-        'etrigan_contactus_email_set1', array(
-            'settings' => 'etrigan_contactus_email_set1',
-            'label'    => __( 'Enter Email Address 1.', 'etrigan' ),
-            'section'  => 'etrigan_contactus_section',
-            'type'     => 'email',
-
-        )
-    );
-    $wp_customize->add_setting(
-        'etrigan_contactus_email_set2',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text' )
-    );
-
-    $wp_customize->add_control(
-        'etrigan_contactus_email_set2', array(
-            'settings' => 'etrigan_contactus_email_set2',
-            'label'    => __( 'Enter Email Address 2.', 'etrigan' ),
-            'section'  => 'etrigan_contactus_section',
-            'type'     => 'email',
-
-        )
-    );
 
     //image-upload//
     $wp_customize->add_setting(
