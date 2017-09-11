@@ -91,7 +91,7 @@ Version 1.0.5
     iii) Added new contact page template.
     iv) Added typography option for post/page and site tile/description.
     v) Added new featured posts showcase.
-    vi) Added scroll fix menu featured.
+    vi) Added static menu.
     vii) Added 2 new skins.
     viii) Added full page template.
     ix) Added header image option.

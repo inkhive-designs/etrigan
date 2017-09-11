@@ -19,7 +19,7 @@
       }
       & > a:hover {
         color: @accent;
-        background: @background;
+        background: darken(@background,5%);
       }
     }
   }
@@ -33,11 +33,11 @@
   line-height: 20px;
   text-decoration: none;
   margin-right: 5px;
-  background-color: @background;
-  border: 1px solid @content;
+  background-color: @background; 
+  border: 1px solid darken(@background, 10%);
   display: inline-block;
   color: @accent;
   &:hover {
-    background: none;
+    background: darken(@background,5%);
   }
 }
