@@ -102,8 +102,8 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
     //image-upload//
     $wp_customize->add_setting(
         'etrigan_contactus_map_img_set',
-        array('default' => '',
-        ));
+        array('sanitize_callback' => 'esc_url_raw' )
+    );
 
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
