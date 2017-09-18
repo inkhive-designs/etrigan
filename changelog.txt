@@ -95,3 +95,9 @@ Version 1.0.5
     vii) Added 2 new skins.
     viii) Added full page template.
     ix) Added header image option.
+
+Version 1.0.6
+
+    i) Fixed Main Slider issues
+
+

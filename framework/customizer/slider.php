@@ -1,5 +1,45 @@
 <?php
 function etrigan_customize_register_main_slider( $wp_customize ) {
+    // SLIDER PANEL
+        $wp_customize->add_panel( 'etrigan_slider_panel', array(
+            'priority'       => 35,
+            'capability'     => 'edit_theme_options',
+            'theme_supports' => '',
+            'title'          => __('Main Slider','etrigan'),
+        ) );
+
+        $wp_customize->add_section(
+            'etrigan_sec_slider_options',
+            array(
+                'title'     => __('Enable/Disable','etrigan'),
+                'priority'  => 0,
+                'panel'     => 'etrigan_slider_panel'
+            )
+        );
+
+
+        $wp_customize->add_setting(
+            'etrigan_main_slider_enable',
+            array( 'sanitize_callback' => 'etrigan_sanitize_checkbox' )
+        );
+
+        $wp_customize->add_control(
+            'etrigan_main_slider_enable', array(
+                'settings' => 'etrigan_main_slider_enable',
+                'label'    => __( 'Enable Slider on HomePage.', 'etrigan' ),
+                'section'  => 'etrigan_sec_slider_options',
+                'type'     => 'checkbox',
+            )
+        );
+
+
+        $wp_customize->add_setting(
+            'etrigan_main_slider_count',
+            array(
+                'default' => '0',
+                'sanitize_callback' => 'etrigan_sanitize_positive_number'
+            )
+        );
 
     // Select How Many Slides the User wants, and Reload the Page.
     $wp_customize->add_control(
