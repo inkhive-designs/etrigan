@@ -33,6 +33,14 @@ function etrigan_custom_header_setup() {
 		'admin-head-callback'    => 'etrigan_admin_header_style',
 		'admin-preview-callback' => 'etrigan_admin_header_image',
 	) ) );
+    register_default_headers( array(
+            'default-image'    => array(
+                'url'            => '%s/assets/images/header.jpg',
+                'thumbnail_url'    => '%s/assets/images/header.jpg',
+                'description'    => __('Default Header Image', 'etrigan')
+            )
+        )
+    );
 }
 add_action( 'after_setup_theme', 'etrigan_custom_header_setup' );
 
