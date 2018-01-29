@@ -6,7 +6,9 @@ $wp_customize->add_section(
     array(
         'title'     => __('Google Web Fonts','etrigan'),
         'priority'  => 41,
-        'description' => __('Defaults: Droid Serif, Ubuntu.','etrigan')
+        'description' => __('Defaults: Droid Serif, Ubuntu.','etrigan'),
+        'panel'     => 'etrigan_design_panel'
+
     )
 );
 

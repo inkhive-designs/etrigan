@@ -11,14 +11,16 @@
         .transition(0.4s all ease);
       }
       overflow: hidden;
-      &:hover {
-        .product-details {
-          opacity: 1;
-          .transform(scale(1));
-        }
-        img {
-          .transform(scale(1.2));
-          .transition(3s all ease);
+      @media screen and (min-width: 767px) {
+        &:hover {
+          .product-details {
+            opacity: 1;
+            .transform(scale(1));
+          }
+          img {
+            .transform(scale(1.2));
+            .transition(3s all ease);
+          }
         }
       }
     }
@@ -35,10 +37,20 @@
       background: fade(#333, 50%);
       color: white;
       text-align: center;
-      opacity: 0;
+      @media screen and (min-width: 767px) {
+        opacity: 0;
+      }
       .transform(scale(0.8));
       .transition(0.5s all ease);
-      h3 { font-size: 14px; }
+      h3 {
+        font-size: 14px;
+        @media screen and (max-width: 767px) {
+          font-size: 18px;
+        }
+          @media screen and (min-width: 767px)and (max-width: 991px){
+          font-size: 11px;
+        }
+      }
       ins {
         background: none;
       }
@@ -61,22 +73,26 @@
       .transition( 0.4s all ease );
       img {
         display: block;
-        .transition( 0.4s all ease );
+        @media screen and (min-width: 767px) {
+          .transition(0.4s all ease);
+        }
         @media screen and (max-width: 991px) {
           width: 100%;
         }
       }
-      &:hover {
-        img {
-          .transform( translateX(0px) );
-          opacity: 1;
-        }
-        .titledesc {
-          display: block;
-          .transform( translateX(0px) );
-          /* left: 0; */
-          opacity: 1;
+      @media screen and (min-width: 767px) {
+        &:hover {
+          img {
+            .transform(translateX(0px));
+            opacity: 1;
+          }
+          .titledesc {
+            display: block;
+            .transform(translateX(0px));
+            /* left: 0; */
+            opacity: 1;
 
+          }
         }
       }
     }
@@ -93,6 +109,9 @@
       opacity: 0;
       h2 {
         font-size: 16px;
+        @media screen and (min-width: 767px) and (max-width: 991px){
+          font-size: 12px;
+        }
         text-align: center;
         color: white;
         font-weight: bold;
@@ -112,12 +131,14 @@
       .titledesc {
         .transform(translateX(50px));
       }
-      .popimage:hover {
-        img {
-          .transform( translateX(0px));
-        }
-        .titledesc {
-          .transform( translateX(0px));
+      @media screen and (min-width: 767px) {
+        .popimage:hover {
+          img {
+            .transform(translateX(0px));
+          }
+          .titledesc {
+            .transform(translateX(0px));
+          }
         }
       }
     }

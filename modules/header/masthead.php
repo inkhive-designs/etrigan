@@ -16,7 +16,7 @@
                 <div class="top-cart-icon">
 
 
-                    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'etrigan'); ?>">
+                    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php esc_html_e('View your shopping cart', 'etrigan'); ?>">
                         <div class="count"><?php echo sprintf(_n('%d item', '%d items', WC()->cart->cart_contents_count, 'etrigan'), WC()->cart->cart_contents_count);?></div>
                         <div class="total"> <?php echo WC()->cart->get_cart_total(); ?>
                         </div>

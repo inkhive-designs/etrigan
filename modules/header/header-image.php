@@ -8,9 +8,9 @@
     <?php endif;?>
     <div class="site-branding-container">
         <div class="site-branding container">
-            <?php if ( get_theme_mod('etrigan_logo') != "" ) : ?>
-                <div id="site-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_mod('etrigan_logo') ); ?>"></a>
+            <?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+                <div class="site-logo">
+                    <?php the_custom_logo();?>
                 </div>
             <?php endif; ?>
             <div id="text-title-desc">

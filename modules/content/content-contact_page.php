@@ -25,7 +25,7 @@
                 </div>
                 <div class="site_address">
                     <p>
-                        <?php echo get_theme_mod('etrigan_contactus_address_set'); ?>
+                        <?php echo esc_html(get_theme_mod('etrigan_contactus_address_set')); ?>
                     </p>
                 </div>
             </div>
@@ -41,17 +41,19 @@
                 <div class="site_contact_title">
                     <h3>Connect With Us</h3>
                 </div>
+                <?php if(get_theme_mod('etrigan_conn_with_us_set','default')): ?>
                 <div class="site_email">
-                    <?php echo get_theme_mod('etrigan_conn_with_us_set') ?>
+                    <?php echo esc_html(get_theme_mod('etrigan_conn_with_us_set')) ?>
                 </div>
+                <?php endif; ?>
             </div>
 
         </div>
     </div>
     <div class="col-md-12 col-sm-12 contact-map">
         <div class="address_map">
-            <a href="<?php echo get_theme_mod('etrigan_contactus_map_url_set');?>" target="_blank">
-                <img src="<?php echo get_theme_mod('etrigan_contactus_map_img_set');?>"></a>
+            <a href="<?php echo esc_url(get_theme_mod('etrigan_contactus_map_url_set'));?>" target="_blank">
+                <img src="<?php echo esc_html(get_theme_mod('etrigan_contactus_map_img_set'));?>"></a>
 
 
         </div>
@@ -59,8 +61,8 @@
     <div class="col-md-12 col-sm-12 contact-form">
     <?php if(get_theme_mod('etrigan_contactform_title_set')): ?>
         <div class="contact-frm col-md-6 col-sm-12 col-xs-12">
-            <div class="form-title"><?php echo get_theme_mod('etrigan_contactform_title_set')?></div>
-            <?php echo do_shortcode(get_theme_mod('etrigan_contactform_shortcode_set'));?>
+            <div class="form-title"><?php echo esc_html(get_theme_mod('etrigan_contactform_title_set'))?></div>
+            <?php echo do_shortcode(esc_html(get_theme_mod('etrigan_contactform_shortcode_set')));?>
         </div>
         <?php endif;?>
         <?php if(!get_theme_mod('etrigan_contactus_content_disable_set')): ?>
@@ -77,7 +79,7 @@
         <div class="col-md-6 col-sm-12 col-xs-12 call-img-outer">
         <img class="call-img" src="<?php
         if(get_theme_mod('etrigan_contactus_form_img_set')):
-            echo get_theme_mod('etrigan_contactus_form_img_set');
+            echo esc_html(get_theme_mod('etrigan_contactus_form_img_set'));
         else:
             echo get_template_directory_uri().'/assets/images/call.png';
         endif;

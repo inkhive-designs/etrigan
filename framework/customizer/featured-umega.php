@@ -4,7 +4,7 @@ function etrigan_customize_register_featured_umega( $wp_customize ) {
 $wp_customize->add_section(
     'etrigan_fumega_showcase',
     array(
-        'title'     => 'Featured Posts Area 4',
+        'title'     => 'Custom Posts Showcase',
         'priority'  => 40,
         'panel'     => 'etrigan_a_fcp_panel',
     )
@@ -18,6 +18,7 @@ $wp_customize->add_control(
     'etrigan_fumega_enable', array(
         'settings' => 'etrigan_fumega_enable',
         'label'    => __( 'Enable Posts Showcase section.', 'etrigan' ),
+        'description' =>__('Upto 30 word for better performance','etrigan'),
         'section'  => 'etrigan_fumega_showcase',
         'type'     => 'checkbox',
     )

@@ -38,8 +38,8 @@
 .grid figure figcaption {
   padding: 2em;
   color: #fff;
-  text-transform: uppercase;
-  font-size: 1.25em;
+  //text-transform: uppercase;
+  font-size: 14px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -68,16 +68,16 @@
   opacity: 0;
 }
 
-.grid figure h2 {
+.grid figure h3 {
   word-spacing: -0.15em;
   font-weight: 300;
 }
 
-.grid figure h2 span {
+.grid figure h3 span {
   font-weight: 800;
 }
 
-.grid figure h2,
+.grid figure h3,
 .grid figure p {
   margin: 0;
 }
@@ -91,17 +91,21 @@
 /*-----------------*/
 
 figure.effect-phoebe {
-  background: #675983;
+ // background: #675983
 }
 
 figure.effect-phoebe img {
-  opacity: 0.85;
+  opacity: 1;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
 }
-
-figure.effect-phoebe:hover img {
-  opacity: 0.6;
+@media screen and (min-width: 767px) {
+  figure.effect-phoebe:hover img {
+    opacity: 1;
+  }
 }
 
 figure.effect-phoebe figcaption::before {
@@ -110,6 +114,7 @@ figure.effect-phoebe figcaption::before {
   left: 0;
   width: 100%;
   height: 100%;
+  background: fade(black,30%);
   //background: url(../img/triangle2.svg) no-repeat center center;
   background-size: 100% 100%;
   content: '';
@@ -120,30 +125,45 @@ figure.effect-phoebe figcaption::before {
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
-
-figure.effect-phoebe:hover figcaption::before {
-  opacity: 0.6;
-  -webkit-transform: scale3d(1,1,1);
-  transform: scale3d(1,1,1);
+@media screen and (min-width: 767px) {
+  figure.effect-phoebe:hover figcaption::before {
+    opacity: 0.6;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
 }
-
-figure.effect-phoebe h2 {
-  margin-top: 1em;
+figure.effect-phoebe h3 {
+  // margin-top: 1em;
   -webkit-transition: transform 0.35s;
   transition: transform 0.35s;
-  -webkit-transform: translate3d(0,40px,0);
-  transform: translate3d(0,40px,0);
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 40px, 0);
+  font-size: 16px;
+  padding: 10px;
+  @media screen and (max-width: 767px){
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  font-size: 24px;
+  left: 0;
+  right: 0;
 }
-
-figure.effect-phoebe:hover h2 {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  @media screen and (min-width: 767px) and (max-width: 991px){
+    font-size: 14px;
+    padding: 0px;
+  }
 }
-
+@media screen and (min-width: 767px) {
+  figure.effect-phoebe:hover h3 {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 figure.effect-phoebe p a {
   color: #fff;
   font-size: 140%;
-  opacity: 0;
+  opacity: 1;
   position: relative;
   display: inline-block;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -164,11 +184,12 @@ figure.effect-phoebe p a:nth-child(3) {
   -webkit-transform: translate3d(60px,-60px,0);
   transform: translate3d(60px,-60px,0);
 }
-
-figure.effect-phoebe:hover p a {
-  opacity: 1;
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+@media screen and (min-width: 767px) {
+  figure.effect-phoebe:hover p a {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 #featured-umega{
   margin-top: 30px;
@@ -184,13 +205,14 @@ figure.effect-phoebe:hover p a {
       word-spacing: -0.15em;
       font-weight: 500;
       font-size: 28px;
-      padding: 20px 20px 0px 20px;
+      text-align: center;
     }
     .showcase-static-inner .showcase-desc{
       word-spacing: normal;
       font-weight: normal;
       font-size: 14px;
       padding: 20px;
+      padding-top: 5px;
     }
   }
     .showcase-posts{
@@ -199,39 +221,17 @@ figure.effect-phoebe:hover p a {
     }
 }
 /* Media queries */
-@media screen and (max-width: 767px) and (max-width: 800px) {
-  #featured-umega .showcase-static .showcase-static-inner .showcase-desc {
-    padding: 0px;
-  }
-}
-@media screen and (max-width: 981px) {
-  #featured-umega .showcase-static .showcase-static-inner .showcase-desc {
-    font-size: 14px !important;
-    padding: 0px 10px 0px 10px !important;
-    line-height: 1.5;
-  }
+@media screen and (min-width: 767px) and (max-width: 991px) {
+
   #featured-umega .showcase-static .showcase-static-inner .showcase-title {
-    padding: 20px 10px 0px 10px;
-    margin-bottom: 10px;
+  font-size: 22px;
+  }
+  #featured-umega .showcase-static .showcase-static-inner .showcase-desc {
+    font-size: 12px;
+    padding: 17px;
+    padding-top: 5px;
   }
 }
-
-
-@media screen and (min-width: 351px) and (max-width: 981px) {
-  #featured-umega .grid figure h2 {
-    font-size: 24px;
-  }
-
-}
-
-
-@media screen and (min-width: 250px) and (max-width: 350px) {
-  #featured-umega .grid figure h2 {
-    font-size: 18px;
-  }
-
-}
-
 
 @media screen and (max-width: 768px) {
 

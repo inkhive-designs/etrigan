@@ -8,13 +8,13 @@
 
 		<div class="featured-thumb col-md-12">
 			<?php if (has_post_thumbnail()) : ?>	
-				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('etrigan-thumb'); ?></a>
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('etrigan-thumb',array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
 			<?php else: ?>
-				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
+				<a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"><img  alt ="<?php the_title()?>" src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>"></a>
 			<?php endif; ?>
 			
 			<header class="entry-header">
-					<h1 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+					<h2 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 					<span class="entry-excerpt"><p><?php echo substr(get_the_excerpt(),0,90).(get_the_excerpt() ? "..." : "" ); ?></p></span>
 				</header><!-- .entry-header -->
 			

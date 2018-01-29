@@ -26,7 +26,7 @@ if ( get_theme_mod('etrigan_main_slider_enable' ) && is_front_page() ) :
 							?>
 							<div class="swiper-slide">
 				            	<a href="<?php echo $url; ?>">
-				            		<img src="<?php echo $img ?>" data-thumb="<?php echo $img ?>" title="<?php echo $title." - ".$desc ?>" />
+				            		<img alt="<?php the_title() ?>" src="<?php echo $img ?>" data-thumb="<?php echo $img ?>" title="<?php echo $title." - ".$desc ?>" />
 				            	</a>
 				            	<div class="slidecaption">
 					                

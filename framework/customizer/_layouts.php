@@ -1,6 +1,8 @@
 <?php
 // Layout and Design
 function etrigan_customize_register_layouts( $wp_customize ) {
+    $wp_customize->get_section('background_image')->panel = 'etrigan_design_panel';
+
 $wp_customize->add_panel( 'etrigan_design_panel', array(
     'priority'       => 40,
     'capability'     => 'edit_theme_options',

@@ -44,6 +44,7 @@ if ( ! function_exists( 'etrigan_setup' ) ) :
          *
          */
         add_theme_support( 'title-tag' );
+        add_theme_support( 'custom-logo' );
 
         /*
          * Enable support for Post Thumbnails on posts and pages.
@@ -51,6 +52,7 @@ if ( ! function_exists( 'etrigan_setup' ) ) :
          * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
          */
         add_theme_support( 'post-thumbnails' );
+        set_post_thumbnail_size( 1200, 400 );
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
@@ -76,6 +78,11 @@ if ( ! function_exists( 'etrigan_setup' ) ) :
         add_theme_support( 'post-formats', array(
             'aside', 'image', 'video', 'quote', 'link',
         ) );
+        add_theme_support( 'custom-logo', array(
+            'flex-height' => true,
+            'flex-width'  => true,
+            'header-text' => array( 'site-title', 'site-description' ),
+        ) );
 
         // Set up the WordPress core custom background feature.
         add_theme_support( 'custom-background', apply_filters( 'etrigan_custom_background_args', array(
@@ -86,11 +93,17 @@ if ( ! function_exists( 'etrigan_setup' ) ) :
         add_image_size('etrigan-sq-thumb', 600,600, true );
         add_image_size('etrigan-thumb', 540,450, true );
         add_image_size('pop-thumb',542, 340, true );
-        add_image_size('etrigan-showcase-thumb', 800,900, true );
+
 
         //Declare woocommerce support
         add_theme_support('woocommerce');
         add_theme_support( 'wc-product-gallery-lightbox' );
+
+
+        add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
+        function add_featured_image_instruction( $content ) {
+            return $content .= '<p>Featured Image will be shown on a header. Your theme works best with an image with a header size of 1200 × 400 pixels.</p>';
+        }
 
     }
 endif; // etrigan_setup

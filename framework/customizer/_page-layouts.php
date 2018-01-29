@@ -81,9 +81,7 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
     );
     $wp_customize->add_setting(
         'etrigan_conn_with_us_set',
-        array( 'sanitize_callback' => 'etrigan_sanitize_text',
-            'default' => __('Cabin no.2, sector 8 Chandigarh (INDIA)
-            Email: info@example.com','etrigan')
+        array( 'sanitize_callback' => 'etrigan_sanitize_text'
         )
     );
 
@@ -111,6 +109,7 @@ function etrigan_customize_register_page_layout( $wp_customize ) {
             'etrigan_contactus_map_img_set',
             array(
                 'label'      => __( 'Upload a Map Image', 'etrigan' ),
+                'description' => __('Size 1200 X 400','etrigan'),
                 'section'    => 'etrigan_contactus_section',
                 'settings'   => 'etrigan_contactus_map_img_set',
                 'type'       => 'image',

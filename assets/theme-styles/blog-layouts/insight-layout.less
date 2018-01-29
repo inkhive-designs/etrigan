@@ -5,7 +5,7 @@
 /*---------------*/
 
 figure.effect-julia {
-  background: #2f3238;
+  background: @accent;
 }
 
 figure.effect-julia img {
@@ -13,6 +13,9 @@ figure.effect-julia img {
   transition: opacity 1s, transform 1s;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
 }
 
 figure.effect-julia figcaption {
@@ -22,6 +25,8 @@ figure.effect-julia figcaption {
 figure.effect-julia h2 {
   position: relative;
   padding: 0.5em 0;
+  font-weight: 450;
+  text-transform: none;
 }
 
 figure.effect-julia p {
@@ -53,6 +58,7 @@ figure.effect-julia p:nth-of-type(3) {
   -webkit-transition-delay: 0.05s;
   transition-delay: 0.05s;
 }
+@media screen and (min-width: 767px) {
 
 figure.effect-julia:hover p:first-child {
   //-webkit-transition-delay: 0s;
@@ -74,6 +80,7 @@ figure.effect-julia:hover img {
   -webkit-transform: scale3d(1.1,1.1,1);
   transform: scale3d(1.1,1.1,1);
 }
+}
 
 figure.effect-julia p {
   opacity: 1;
@@ -91,7 +98,7 @@ figure.effect-julia p {
 @media screen and (max-width: 768px) {
 
   figure.effect-julia p {
-    display: none;
+   display: none;
   }
   .content {
    // padding: 0 10px;
@@ -115,4 +122,13 @@ figure.effect-julia p {
     font-size: 24px;
   }
 
+}
+@media screen and (max-width: 767px){
+  figcaption h2{
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 }

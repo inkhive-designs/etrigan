@@ -3,7 +3,9 @@
 function etrigan_customize_register_social( $wp_customize ) {
 $wp_customize->add_section('etrigan_social_section', array(
     'title' => __('Social Icons','etrigan'),
-    'priority' => 44 ,
+    'priority' => 2 ,
+    'panel' => 'etrigan_header_panel'
+
 ));
 
 $social_networks = array( //Redefinied in Sanitization Function.
@@ -21,7 +23,6 @@ $social_networks = array( //Redefinied in Sanitization Function.
     //social icons style
     $social_style = array(
         'hvr-outline-out'  => __('Default', 'etrigan'),
-        //'hvr-ripple-out'  => __('Default', 'etrigan'),
         'hvr-back-pulse'   => __('Style 1', 'etrigan'),
         'hvr-curl-bottom-left'   => __('Style 2', 'etrigan'),
         'hvr-outline-in'   => __('Style 3', 'etrigan'),

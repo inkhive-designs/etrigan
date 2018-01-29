@@ -11,7 +11,7 @@
 	            <?php
 				        $args = array( 
 			        	'post_type' => 'post',
-			        	'posts_per_page' => get_theme_mod('etrigan_a_slider_count',10),
+			        	'posts_per_page' => esc_html(get_theme_mod('etrigan_a_slider_count',10)),
 			        	'cat'         => esc_html( get_theme_mod('etrigan_a_slider_cat',0) ),
 			        	);
 				        $loop = new WP_Query( $args );
@@ -32,7 +32,7 @@
                             					
 							<div class="swiper-slide">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
-									<img src="<?php echo $image_url; ?>">
+									<img alt= "<?php the_title() ?>" src="<?php echo $image_url; ?>">
 									<div class="product-details">
 										<h3><?php the_title(); ?></h3>
 									</div>
@@ -83,7 +83,7 @@
 						<div class="fg-item-container col-md-3 col-sm-3 col-xs-6">
 							<div class="fg-item">
 								<a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
-									<img src="<?php echo $image_url; ?>">
+									<img alt = "<?php the_title() ?>" src="<?php echo $image_url; ?>">
 									<div class="product-details">
 										<h3><?php the_title(); ?></h3>
 									</div>

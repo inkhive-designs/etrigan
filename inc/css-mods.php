@@ -13,11 +13,6 @@ function etrigan_custom_css_mods() {
 	endif;
 	
 	
-	//Exception: IMage transform origin should be left on Left Alignment, i.e. Default
-	if ( !get_theme_mod('etrigan_center_logo') ) :
-		$custom_css .= "#masthead #site-logo img { transform-origin: left; }";
-	endif;	
-	
 	if ( get_theme_mod('etrigan_title_font') ) :
 		$custom_css .= ".title-font, h1, h2, .section-title, .woocommerce ul.products li.product h3 { font-family: ".esc_html( get_theme_mod('etrigan_title_font','Droid Serif') )."; }";
 	endif;
@@ -48,13 +43,6 @@ function etrigan_custom_css_mods() {
 		$custom_css .= "#header-image .site-branding #text-title-desc { display: none; }";
 	endif;
 	
-	if ( get_theme_mod('etrigan_logo_resize') ) :
-		$val = esc_html( get_theme_mod('etrigan_logo_resize') )/100;
-		$custom_css .= "#masthead #site-logo img { transform: scale(".$val."); -webkit-transform: scale(".$val."); -moz-transform: scale(".$val."); -ms-transform: scale(".$val."); }";
-		endif;
-
-
-
 
 // page & post fontsize
     if(get_theme_mod('etrigan_content_page_post_fontsize_set')):

@@ -5,7 +5,7 @@ $wp_customize->add_section(
     'etrigan_sec_upgrade',
     array(
         'title'     => __('Discover ETRIGAN PRO','etrigan'),
-        'priority'  => 45,
+        'priority'  => 1,
     )
 );
 

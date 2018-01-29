@@ -100,4 +100,15 @@ Version 1.0.6
 
     i) Fixed Main Slider issues
 
+Version 1.0.7
+
+    i) Slider Bug fixed on mobile screens.
+    ii) Social icons minor bug fixed.
+    iii) Add Custom logo.
+    iv) Etrigan layout bug fixed.
+    v) Custom showcase bug fixed.
+    vi) Menu description minor bug fixed.
+    vii) Increase Theme Performance
+
+
 

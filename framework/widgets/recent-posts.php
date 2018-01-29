@@ -91,10 +91,10 @@ class etrigan_Recent_Posts extends WP_Widget {
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:','etrigan' ); ?></label> 
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:','etrigan' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		
-		<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"><?php _e( 'No. of Posts:', 'etrigan' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'no_of_posts' ); ?>"><?php esc_html_e( 'No. of Posts:', 'etrigan' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>" type="number" value="<?php echo esc_attr( $no_of_posts ); ?>" />
 		</p>
 		<?php 
