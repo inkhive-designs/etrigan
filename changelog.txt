@@ -110,5 +110,10 @@ Version 1.0.7
     vi) Menu description minor bug fixed.
     vii) Increase Theme Performance
 
+Version 1.0.8
+	
+	i) Google fonts minor bug fixed.
+	ii) Other minor bug fixed.
+
 
 
